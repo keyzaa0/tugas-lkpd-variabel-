@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LKPD JavaScript – String, Number, dan Konversi Data | Keyza</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbd3e4;--card:#fff6fa;--ink:#4a1030;--pink:#d6336c;--soft:#f8bcd6;--line:#e79ab9;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+header{text-align:center;padding:36px 12px 20px}
+header h1{font-size:clamp(1.7rem,5vw,2.6rem);margin:0;font-weight:800;color:var(--pink)}
+header p{margin:6px 0 0;font-weight:600}
+section{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:22px;margin:20px 0}
+h2{margin:0 0 12px;font-size:1.3rem;color:var(--pink)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft)}
+.scroll{overflow-x:auto}
+pre{background:#fde9f2;border-left:5px solid var(--pink);padding:12px 14px;border-radius:8px;overflow-x:auto;font-family:'Fira Code',monospace;font-size:.88rem;margin:10px 0}
+.ans{background:#ffe0ec;border:2px dashed var(--pink);border-radius:10px;padding:10px 14px;margin:10px 0}
+.ans b.t{color:var(--pink)}
+td.ans-cell{background:#ffe0ec;font-weight:600}
+code{font-family:'Fira Code',monospace;background:#fde9f2;padding:1px 5px;border-radius:5px}
+ul,ol{margin:6px 0 6px 20px;padding:0}
+.id{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:16px}
+.id div{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:8px 12px}
+.id span{display:block;font-size:.8rem;opacity:.75}
+.id strong{font-size:1.05rem}
+footer{text-align:center;font-size:.85rem;opacity:.8;margin-top:30px}
+.chk{text-align:center;font-size:1.2rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>LEMBAR KERJA PESERTA DIDIK (LKPD)</h1>
+  <p>JavaScript – String, Number, dan Konversi Data</p>
+  <div class="id">
+    <div><span>Nama</span><strong>Keyza</strong></div>
+    <div><span>Kelas / No. Absen</span><strong>X PPLG 2 / 16</strong></div>
+    <div><span>Tanggal</span><strong>30 Oktober</strong></div>
+  </div>
+</header>
+
+<section>
+  <h2>Identitas</h2>
+  <div class="scroll"><table>
+    <tr><th>Satuan Pendidikan</th><td>SMKN 1 GARUT</td></tr>
+    <tr><th>Mata Pelajaran</th><td>Dasar-Dasar Pengembangan Perangkat Lunak dan Gim</td></tr>
+    <tr><th>Kelas/Fase</th><td>X / Fase E</td></tr>
+    <tr><th>Alokasi Waktu</th><td>2 × 45 menit</td></tr>
+    <tr><th>Nama</th><td class="ans-cell">Keyza</td></tr>
+    <tr><th>Kelas / No. Absen</th><td class="ans-cell">X PPLG 2 / 16</td></tr>
+    <tr><th>Tanggal</th><td class="ans-cell">30 Oktober</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>A. Tujuan Pembelajaran</h2>
+  <p>Setelah menyelesaikan LKPD ini, peserta didik mampu: (1) membedakan String dan Number; (2) menjelaskan bahwa prompt() menghasilkan String; (3) menggunakan Number() dan String(); (4) menganalisis kesalahan akibat tipe data; dan (5) membuat program input dan perhitungan sederhana.</p>
+</section>
+
+<section>
+  <h2>B. Petunjuk Kerja</h2>
+  <ul>
+    <li>Kerjakan mandiri terlebih dahulu.</li>
+    <li>Prediksi hasil sebelum menjalankan kode.</li>
+    <li>Jalankan kode dan amati.</li>
+    <li>Diskusikan melalui Think Pair Share.</li>
+    <li>Simpan file sebagai lkpd_string_number_nama.js.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>C. Aktivitas 1 — Eksperimen 10 + 20</h2>
+  <p>Jangan jalankan terlebih dahulu. Prediksikan hasil:</p>
+<pre>let a = "10";
+let b = "20";
+console.log(a + b);</pre>
+  <div class="scroll"><table>
+    <tr><th>Pertanyaan</th><th>Jawaban Kamu</th></tr>
+    <tr><td>Apa output program?</td><td class="ans-cell"><code>1020</code></td></tr>
+    <tr><td>Mengapa hasil tersebut terjadi?</td><td class="ans-cell">Karena <code>a</code> dan <code>b</code> bertipe String (ditulis di dalam tanda kutip). Pada String, operator <code>+</code> bukan menjumlahkan, tetapi menggabungkan teks, sehingga "10" digabung "20" menjadi "1020".</td></tr>
+    <tr><td>Apakah a dan b bertipe Number?</td><td class="ans-cell">Tidak. Keduanya bertipe String.</td></tr>
+  </table></div>
+  <p>Uji sekarang. Apakah prediksimu benar? Jelaskan.</p>
+   <img src="Screenshot_20261030_111425_Code Studio.jpg" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <div class="ans"><b class="t">Jawaban:</b> Ya, prediksi saya benar. Setelah dijalankan, outputnya <code>1020</code>, bukan 30, karena "10" dan "20" adalah String sehingga hanya digabung (konkatenasi), bukan dijumlahkan.</div>
+</section>
+
+<section>
+  <h2>D. Aktivitas 2 — Menemukan Tipe Data</h2>
+  <p>Jalankan:</p>
+<pre>let nama = "Asep";
+let umur = 16;
+console.log(typeof nama);
+console.log(typeof umur);</pre>
+  <div class="scroll"><table>
+    <tr><th>Variabel</th><th>Prediksi</th><th>Hasil typeof</th><th>Kesimpulan</th></tr>
+    <tr><td>nama</td><td class="ans-cell">string</td><td class="ans-cell">string</td><td class="ans-cell">Nilai di dalam tanda kutip adalah String.</td></tr>
+    <tr><td>umur</td><td class="ans-cell">number</td><td class="ans-cell">number</td><td class="ans-cell">Angka tanpa tanda kutip adalah Number.</td></tr>
+  </table></div>
+  <img src="Screenshot_20261030_150320_Code Studio.jpg" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <p>Temuan: Apa perbedaan String dan Number berdasarkan eksperimenmu?</p>
+  <div class="ans"><b class="t">Jawaban:</b> String adalah data teks yang ditulis dengan tanda kutip, dan operator <code>+</code> menggabungkannya ("10" + "20" = "1020"). Number adalah data angka tanpa tanda kutip yang bisa dihitung, dan operator <code>+</code> menjumlahkannya (10 + 20 = 30).</div>
+</section>
+
+<section>
+  <h2>E. Aktivitas 3 — Konversi String menjadi Number</h2>
+  <p>Perbaiki program agar menghasilkan 30. Gunakan Number():</p>
+<pre>let a = "10";
+let b = "20";
+let hasil = Number(a) + Number(b);
+console.log(hasil);</pre>
+  <img src="Screenshot_20261030_150827_Code Studio.jpg" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+  <div class="ans"><b class="t">Catat hasil program:</b> <code>30</code></div>
+</section>
+
+<section>
+  <h2>F. Aktivitas 4 — Program Kasir Sederhana</h2>
+  <p>Buat program yang meminta harga barang dan jumlah barang melalui prompt(), mengubah keduanya menjadi Number, lalu menghitung total harga.</p>
+<pre>let harga = Number(prompt("Masukkan harga: "));
+let jumlah = Number(prompt("Masukkan jumlah: "));
+let total = harga * jumlah;
+console.log("Total belanja = " + total);</pre>
+  <div class="scroll"><table>
+    <tr><th>Input Uji</th><th>Nilai</th></tr>
+    <tr><td>Harga</td><td class="ans-cell">Rp 5.000</td></tr>
+    <tr><td>Jumlah</td><td class="ans-cell">3</td></tr>
+    <tr><td>Total seharusnya</td><td class="ans-cell">Rp 15.000</td></tr>
+    <tr><td>Total program</td><td class="ans-cell">Rp 15.000</td></tr>
+  </table></div>
+  <img src="Screenshot_20261030_151413_Code Studio.jpg" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+</section>
+
+<section>
+  <h2>G. Tantangan — Program Hitung Nilai</h2>
+  <p>Buat program dengan input nilai tugas, UTS, dan UAS. Konversikan semua input menggunakan Number(), lalu hitung rata-rata dengan rumus (tugas + UTS + UAS) / 3.</p>
+  <p><b>Algoritma saya:</b></p>
+  <div class="ans"><ol>
+    <li>Minta input nilai tugas, UTS, dan UAS memakai <code>prompt()</code>.</li>
+    <li>Ubah ketiga input menjadi Number memakai <code>Number()</code>.</li>
+    <li>Hitung rata-rata dengan rumus (tugas + UTS + UAS) / 3 dan simpan di variabel.</li>
+    <li>Tampilkan hasil rata-rata dengan <code>console.log()</code>.</li>
+  </ol></div>
+<pre>let tugas = Number(prompt("Nilai tugas: "));
+let uts = Number(prompt("Nilai UTS: "));
+let uas = Number(prompt("Nilai UAS: "));
+let rata = (tugas + uts + uas) / 3;
+console.log("Rata-rata = " + rata);</pre>
+  <img src="Screenshot_20261030_151957_Code Studio.jpg" alt="Hasil kode" width="360" style="max-width:100%; height:auto;">
+
+</section>
+
+<section>
+  <h2>H. Think — Pair — Share</h2>
+  <div class="scroll"><table>
+    <tr><th>Pertanyaan</th><th>Jawaban</th></tr>
+    <tr><td>Mengapa prompt() perlu dikonversi jika hasilnya ingin dihitung?</td><td class="ans-cell">Karena prompt() selalu menghasilkan String, walaupun yang diketik angka. Jika tidak dikonversi ke Number, operasi <code>+</code> hanya menggabungkan teks.</td></tr>
+    <tr><td>Apa perbedaan "10" dengan 10?</td><td class="ans-cell">"10" adalah String (teks), sedangkan 10 adalah Number (angka yang bisa dihitung).</td></tr>
+    <tr><td>Apa yang terjadi jika lupa Number()?</td><td class="ans-cell">Hasil perhitungan salah, misalnya "10" + "20" menjadi "1020" bukan 30. Operator <code>*</code>, <code>-</code>, dan <code>/</code> tetap bisa jalan karena JavaScript mengubahnya otomatis, tetapi <code>+</code> tidak.</td></tr>
+  </table></div>
+  <p><b>Pair:</b> Bandingkan jawaban dengan teman. Apakah sama? Mengapa bisa berbeda?</p>
+  <div class="ans"><b class="t">Jawaban:</b> Inti jawabannya sama, hanya kalimatnya berbeda. Perbedaan bisa terjadi karena setiap orang memakai kata dan contoh yang berlainan, tetapi maksudnya tetap bahwa prompt() menghasilkan String sehingga harus diubah dengan Number().</div>
+  <p><b>Share:</b> Sampaikan satu temuan penting kepada kelas.</p>
+  <div class="ans"><b class="t">Temuan penting:</b> Hasil prompt() selalu String,jika ingin menjadi angka maka harus mengubahnya menjadi Number() sebelum dihitung agar hasil menjadi sesuai dengan yang di inginkan.</div>
+</section>
+
+<section>
+  <h2>I. Refleksi 3–2–1</h2>
+  <p><b>3 hal yang saya pahami:</b></p>
+  <div class="ans"><ol>
+    <li>String adalah teks dan Number adalah angka.</li>
+    <li>prompt() selalu menghasilkan String.</li>
+    <li>Number() mengubah String menjadi Number sehingga bisa dihitung.</li>
+  </ol></div>
+  <p><b>2 hal yang masih membingungkan:</b></p>
+  <div class="ans"><ol>
+    <li>jika "10" adalah string apakah operasi selain + akan tetap berjalan?atau perlu mengubahnya terlebih dahulu?</li>
+    <li>Kapan JavaScript mengubah tipe data otomatis dan kapan tidak.</li>
+  </ol></div>
+  <p><b>1 hal yang ingin saya coba pada program berikutnya:</b></p>
+  <div class="ans">Membuat program sendiri baik itu aplikasi atau web tanpa bantuan AI.</div>
+</section>
+
+<section>
+  <h2>J. Penilaian Diri</h2>
+  <div class="scroll"><table>
+    <tr><th>Pernyataan</th><th>Ya</th><th>Belum</th></tr>
+    <tr><td>Saya dapat membedakan String dan Number.</td><td class="chk">☑</td><td class="chk">☐</td></tr>
+    <tr><td>Saya memahami prompt() menghasilkan String.</td><td class="chk">☑</td><td class="chk">☐</td></tr>
+    <tr><td>Saya dapat menggunakan Number().</td><td class="chk">☑</td><td class="chk">☐</td></tr>
+    <tr><td>Saya dapat menggunakan String().</td><td class="chk">☑</td><td class="chk">☐</td></tr>
+    <tr><td>Saya dapat menemukan kesalahan tipe data.</td><td class="chk">☐</td><td class="chk">☑</td></tr>
+    <tr><td>Saya dapat membuat program input dan hitung sederhana.</td><td class="chk">☐</td><td class="chk">☑</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>K. Rubrik Penilaian Praktik</h2>
+  <div class="scroll"><table>
+    <tr><th>Aspek</th><th>4 — Sangat Baik</th><th>3 — Baik</th><th>2 — Cukup</th><th>1 — Perlu Bimbingan</th></tr>
+    <tr><td>Tipe data</td><td>Menjelaskan dan memberi contoh.</td><td>Membedakan String/Number.</td><td>Masih ada kekeliruan.</td><td>Belum memahami.</td></tr>
+    <tr><td>Konversi</td><td>Tepat dan mandiri.</td><td>Benar dengan sedikit arahan.</td><td>Beberapa kesalahan.</td><td>Belum mampu.</td></tr>
+    <tr><td>Program</td><td>Berjalan benar dan rapi.</td><td>Sedikit kesalahan.</td><td>Berjalan sebagian.</td><td>Belum berjalan.</td></tr>
+    <tr><td>Pemecahan masalah</td><td>Menemukan dan memperbaiki mandiri.</td><td>Menemukan dengan sedikit bantuan.</td><td>Perlu banyak bantuan.</td><td>Belum mampu.</td></tr>
+  </table></div>
+  <p><b>Catatan Guru:</b></p>
+  <div class="ans">(Diisi oleh guru)</div>
+</section>
+
+<footer>LKPD JavaScript — String, Number &amp; Konversi Data · Keyza · X PPLG 2 · Absen 16</footer>
+</div>
+</body>
+</html>
